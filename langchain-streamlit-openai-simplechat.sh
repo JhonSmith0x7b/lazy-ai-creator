@@ -111,10 +111,11 @@ if message:
     st.session_state['messages'].append({"role": "user", "content": message})
     agent = st.session_state['simple_agent']
     result = agent.invoke(message)
-    print(result)
     st.session_state['messages'].append({"role": "ai", "content": result})
 display_chat_messages()
 EOF
 cat <<EOF > local_run.sh
 streamlit run app.py
 EOF
+
+echo "Good Luck!"
